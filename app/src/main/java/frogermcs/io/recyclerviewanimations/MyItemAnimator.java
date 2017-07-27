@@ -48,6 +48,17 @@ public class MyItemAnimator extends DefaultItemAnimator {
         return colorTextInfo;
     }
 
+
+    @Override
+    public boolean animateAdd(RecyclerView.ViewHolder holder) {
+        return super.animateAdd(holder);
+    }
+
+    @Override
+    public boolean animateRemove(RecyclerView.ViewHolder holder) {
+        return super.animateRemove(holder);
+    }
+
     // info - And this is the best place to prepare our animation.
     @Override
     public boolean animateChange(@NonNull RecyclerView.ViewHolder oldHolder,
