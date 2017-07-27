@@ -16,6 +16,7 @@ import java.util.List;
 
 /**
  * Created by Miroslaw Stanek on 06.01.2016.
+ * <a href="http://frogermcs.github.io/recyclerview-animations-androiddevsummit-write-up/"></a>
  */
 public class MyItemAnimator extends DefaultItemAnimator {
 
@@ -26,6 +27,7 @@ public class MyItemAnimator extends DefaultItemAnimator {
         return true;
     }
 
+    // info - Now our animator starts recording recent view state
     @NonNull
     @Override
     public ItemHolderInfo recordPreLayoutInformation(@NonNull RecyclerView.State state,
@@ -46,6 +48,7 @@ public class MyItemAnimator extends DefaultItemAnimator {
         return colorTextInfo;
     }
 
+    // info - And this is the best place to prepare our animation.
     @Override
     public boolean animateChange(@NonNull RecyclerView.ViewHolder oldHolder,
                                  @NonNull final RecyclerView.ViewHolder newHolder,

@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -66,7 +66,7 @@ public class ColorsAdapter extends RecyclerView.Adapter<ColorsAdapter.ColorViewH
 
     static class ColorViewHolder extends RecyclerView.ViewHolder {
 
-        @Bind(R.id.tvColor)
+        @BindView(R.id.tvColor)
         TextView tvColor;
 
         public ColorViewHolder(View itemView) {

@@ -7,22 +7,21 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.CheckBox;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnCheckedChanged;
 
 public class MainActivity extends AppCompatActivity {
 
-    @Bind(R.id.rvColors)
+    @BindView(R.id.rvColors)
     RecyclerView rvColors;
-    @Bind(R.id.rgOperations)
+    @BindView(R.id.rgOperations)
     RadioGroup rgOperations;
-    @Bind(R.id.cbPredictive)
+    @BindView(R.id.cbPredictive)
     CheckBox cbPredictive;
-    @Bind(R.id.cbCustomAnimator)
+    @BindView(R.id.cbCustomAnimator)
     CheckBox cbCustomAnimator;
 
     private ColorsAdapter colorsAdapter;
@@ -36,6 +35,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setupColorsList() {
+        // should turn it to true, the default is false
+        // info - vì khi xóa 1 item, item khác sẽ bị đẩy xuống và sẽ thấy trắng nếu ko predict trước
+        // http://frogermcs.github.io/recyclerview-animations-androiddevsummit-write-up/
         final LinearLayoutManager layoutManager = new LinearLayoutManager(this) {
             @Override
             public boolean supportsPredictiveItemAnimations() {
